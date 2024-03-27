@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Portfolio</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+        crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+        rel="stylesheet" type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- <link href="css/main.css" rel="stylesheet" /> -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href='../css/data_science/style.css'
+        type="text/css">
+</head>
+
+<body>
+    <div class="back-img">
+        <nav
+            class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html#portfolio">Home</a>
+            </div>
+        </nav>
+        <div class="project-detail">
+            <div class="top-div">
+                <h1 style="color:var(--bs-secondary)">Analysing Tuberculosis
+                    Cases in Kaduna State(Nigeria) 2019-2023</h1>
+            </div>
+            <div class="project-desc">
+                <div class="col col-8 col-md-8">
+                    <p> This project was part of colab between Omdena and
+                        Kaduna Local Authorities. About 15-20 people were
+                        working on the project at different stages of Data
+                        Collection, EDA, Visualization, Modeling, Deployment
+                        And Presentation. Here is the final result of approx. 3
+                        months of hardwork and teamwork.</p>
+                    <div>
+                        <a
+                            href="https://dagshub.com/Omdena/KadunaNigeriaChapter_Tuberculosis"><strong>Dagshub
+                                Repo</strong></a>
+                        <p></p>
+                        <a href="https://kadunastatetbanalysis.streamlit.app/"><strong>Dashboard
+                                App</strong></a>
+                    </div>
+                    <p> I was mainly part of EDA and Visualization team
+                        although I wanted to be involved in all phases. The
+                        data collected was divided into blocks where I worked
+                        on Block2C. The contents of the blocks were slightly
+                        different from each other, so is the focus of Analysis.
+                    </p>
+
+                    <h4><strong>1. EDA</strong></h4>
+                    <p> For starting phase, The data was separated in years[for
+                        each block],So separate analysis for each year
+                        2021,2022,first_half-2023 and then combined analysis
+                        for whole period was done.</p>
+                    <p> At later stages, the new data was added from 2019,2020
+                        and second_half-2023. The EDA for combined period of
+                        2019-2023 was performed. </p>
+                    <p> This phase involved analysing inconsistencies like null
+                        values, outliers,data_types and data_values etc. as
+                        well as analysing distributions of the data. Using
+                        Python and Plotly the task was completed very
+                        effectively.</p>
+
+                    <p>Because of the amazing work of the data preprocessing
+                        team and simplicity of data there were no major
+                        challenges.
+                        But few minor as challenges mentioned below - </p>
+                    <ol>
+                        <li>Few Null values were present which were imputed
+                            with zero.</li>
+                        <li>The names of LGAs were slightly different from
+                            references which were corrected.</li>
+                        <li>The data format for columns "LGA" and "Age_Gr" for
+                            2021 were different from that of 2022 and 2023, so
+                            for combined EDA changes data was replaced in 2021
+                            to maintain consistency.</li>
+                    </ol>
+                    <h5>Here are some of the findings from the
+                        Block2C_EDA_updated.</h5>
+                    <li> The dataset was balanced w.r.t. all features</li>
+                    <li> The dataset contained 14 original and 1
+                        engineered(Year_Quarter)</li>
+                    <li>The data was from 2019-2023</li>
+                    <li>Column 'Total'[later 'TB_Cases'] had some mislleneous
+                        values.</li>
+                    <li>'TB_Cases' column was right skewed with most of the
+                        values less than 10.</li>
+
+                    <h4><strong>2. Visualization</strong></h4>
+                    Plotly was used during this phase to showcase trends and
+                    insights related to TB Cases w.r.t different demographics.
+
+                    <h4><strong>3. Modeling</strong></h4>
+                    Although could not be part of modeling team, I tried to
+                    create clustring based model for the data using K-means,
+                    DBSCAN, Gaussian Mixtures algoritms.
+                    The data was scaled using both StandardScaler and
+                    MinMaxScaler.
+
+                    Elbow Method was used for finding Optimal K in KMeans.
+                    K-distance Graph was used for finding Optimal eps values in
+                    DBSCAN.
+                    AIC and BIC score were used for finding n_components in
+                    Gaussian Mixtures.
+
+                    Total 8 clusters were formed based on evaluations.
+
+                    The Silhouette Score was used as a metric for performance
+                    evaluations.
+
+                    Silhouette score for final models were:
+                    <ol>
+                        <li>KMeans: <strong>0.4121</strong></li>
+                        <li>DBSCAN: <strong>0.4121</strong></li>
+                        <li>GMM: <strong>0.4377</strong></li>
+                    </ol>
+                </div>
+                <div class="col col-4 col-md-4">
+                    <div class="project-refs">
+                        <a
+                            href="https://github.com/Harsh26K/Data_Analytics/tree/Main/Product_recommendation">
+                            <button class=".btn"> View Code</button>
+                        </a>
+                    </div>
+                    <div class="project-images">
+                        <div class="card">
+                            <img src="../assets/img/kaduna_tb/tb_cases_by_year.png"
+                                class="card-img-top .img-fluid" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">fig: tb_cases_by_year
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../assets/img/kaduna_tb/choropleth_map.png"
+                                class="card-img-top .img-fluid" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">fig: choropleth_map
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../assets/img/kaduna_tb/clusters_result.png"
+                                class="card-img-top .img-fluid" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">fig: clusters_result
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
+</body>
+
+
+</html>
